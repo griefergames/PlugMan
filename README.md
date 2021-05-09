@@ -56,11 +56,15 @@ PlugMan is a simple, easy to use plugin that lets server admins manage plugins f
 | plugman.unload | OP | Allow use of the unload command. |
 | plugman.check | OP | Allow use of the check command. |
 | plugman.check.all | OP | Allow use of the check command. |
+| plugman.depends | OP | Allow use of the depends command. |
 
 ## Configuration
 | File | URL |
 | ----- | ------- |
 | config.yml | https://github.com/r-clancy/PlugMan/blob/master/src/main/resources/config.yml |
+
+## Developer API
+Developers can add plugins to ignored plugins on runtime using the PlugmanApi ``com.rylinaux.plugman.api.PlugmanApi``.
 
 ## Sponsors
 

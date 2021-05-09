@@ -205,6 +205,84 @@ public class PluginUtil {
     }
 
     /**
+     * Returns the plugins required to be loaded after this plugin
+     *
+     * @param plugin Plugin
+     * @return list of plugins
+     */
+    public static List<String> getLoadBefore(Plugin plugin) {
+        return plugin.getDescription().getLoadBefore();
+    }
+
+    /**
+     * Returns a List of plugin names in depends section.
+     *
+     * @param plugin Plugin
+     * @return dependencies
+     */
+    public static List<String> getDependencies(Plugin plugin) {
+        return plugin.getDescription().getDepend();
+    }
+
+    /**
+     * Returns a List of plugin names in softdepends section.
+     *
+     * @param plugin Plugin
+     * @return soft dependencies
+     */
+    public static List<String> getSoftDependencies(Plugin plugin) {
+        return plugin.getDescription().getSoftDepend();
+    }
+
+    /**
+     * Returns a List of plugin names required to be loaded before this plugin
+     *
+     * @param plugin Plugin
+     * @return plugin list
+     */
+    public static List<String> getLoadBeforePlugins(Plugin plugin) {
+        List<String> depends = new ArrayList<>();
+        for(Plugin pl : Bukkit.getPluginManager().getPlugins()) {
+            if(pl.getDescription().getLoadBefore().contains(plugin.getName())) {
+                depends.add(pl.getName());
+            }
+        }
+        return depends;
+    }
+
+    /**
+     * Returns a List of plugin names depending this plugin.
+     *
+     * @param plugin Plugin
+     * @return plugin list
+     */
+    public static List<String> getDependingPlugins(Plugin plugin) {
+        List<String> depends = new ArrayList<>();
+        for(Plugin pl : Bukkit.getPluginManager().getPlugins()) {
+            if(pl.getDescription().getDepend().contains(plugin.getName())) {
+                depends.add(pl.getName());
+            }
+        }
+        return depends;
+    }
+
+    /**
+     * Returns a List of plugin names soft-depending this plugin.
+     *
+     * @param plugin Plugin
+     * @return plugin list
+     */
+    public static List<String> getSoftDependingPlugins(Plugin plugin) {
+        List<String> depends = new ArrayList<>();
+        for(Plugin pl : Bukkit.getPluginManager().getPlugins()) {
+            if(pl.getDescription().getSoftDepend().contains(plugin.getName())) {
+                depends.add(pl.getName());
+            }
+        }
+        return depends;
+    }
+
+    /**
      * Find which plugin has a given command registered.
      *
      * @param command the command.

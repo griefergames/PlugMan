@@ -84,11 +84,17 @@ public class PlugManCommandHandler implements CommandExecutor {
             case "reload":
                 cmd = new ReloadCommand(sender);
                 break;
+            case "safereload":
+                cmd = new SafeReloadCommand(sender);
+                break;
             case "unload":
                 cmd = new UnloadCommand(sender);
                 break;
             case "check":
                 cmd = new CheckCommand(sender);
+                break;
+            case "depends":
+                cmd = new DependsCommand(sender);
                 break;
         }
 

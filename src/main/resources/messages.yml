@@ -19,6 +19,15 @@ check:
   unknown: '&cVersion information is unknown.'
   unknown-player: '&cUnknown (Installed): {0}'
   not-available: '&cVersion information for {0} is unavailable.'
+depends:
+  header: '&9Checking Plugin Dependencies...'
+  header.start: '&7Plugin Dependency Information: {0}'
+  depend: '&7- &9Dependencies: &7{0}'
+  soft-depend: '&7- &9Soft-Dependencies: &7{0}'
+  load-before: '&7- &9LoadBefore: &7{0}'
+  plugin-depends: '&7- &9Dependency of: &7{0}'
+  plugin-softdepends: '&7- &9Soft-Dependency of: &7{0}'
+  plugin-loadbefore: '&7- &9LoadBefore of: &7{0}'
 disable:
   all: '&9All plugins have been disabled (excluding PlugMan).'
   already-disabled: '&c{0} is already disabled.'
@@ -53,13 +62,16 @@ help:
   restart: '&7- &a/plugman restart <plugin|all> &f- &7Restart a plugin.'
   load: '&7- &a/plugman load <plugin> &f- &7Load a plugin.'
   reload: '&7- &a/plugman reload <plugin|all> &f- &7Reload a plugin.'
+  safereload: '&7- &a/plugman safereload <plugin> &f- &7Reload a plugin safely.'
   unload: '&7- &a/plugman unload <plugin> &f- &7Unload a plugin.'
   check: '&7- &a/plugman check <plugin|all> [-f] &f- &7Check if a plugin is up-to-date (-f dumps to file for all).'
+  depends: '&7- &a/plugman depends <plugin> [-f] &f- &7Check a plugin for its dependencies.'
 info:
   header: 'Plugin Information: {0}'
   version: '&7- Version: &a{0}'
   authors: '&7- Author(s): &a{0}'
   status: '&7- Status: {0}'
+  reload: '&7- Reload: {0}'
   depends: '&7- Depends: {0}'
   softdepends: '&7- SoftDepends: &a{0}'
 list:
@@ -77,6 +89,14 @@ lookup:
 reload:
   all: '&9All plugins have been reloaded.'
   reloaded: '&9{0} has been reloaded.'
+safereload:
+  start: '&9Starting Safe-Reload of Plugin {0}..'
+  unload-depend: '&9Unloading Depend: &7{0}'
+  unload-softdepend: '&9Unloading Soft-Depend: &7{0}'
+  load-depend: '&9Loading Depend: &7{0}'
+  load-softdepend: '&9Loading Soft-Depend: &7{0}'
+  reloaded: '&9Finished Safe-Reload of Plugin {0}!'
+  ignored: '&cPlugMan is configured to ignore {0}. &cSafe-Reload is canceled.'
 restart:
   all: '&9All plugins have been restarted.'
   restarted: '&9{0} has been restarted.'

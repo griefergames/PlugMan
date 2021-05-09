@@ -1,8 +1,8 @@
 name: PlugMan
 main: com.rylinaux.plugman.PlugMan
-version: 2.1.7
+version: 3.0.0
 description: Plugin manager for Bukkit servers
-author: rylinaux
+authors: [ rylinaux, CosmoHDx ]
 api-version: 1.13
 commands:
   plugman:
@@ -13,7 +13,7 @@ commands:
            /plugman check <plugin|all> [-f]
            /plugman lookup <command>
            /plugman (enable|disable|restart) <plugin|all>
-           /plugman (info|usage|load|reload|unload) <plugin>
+           /plugman (info|depends|usage|load|reload|safereload|unload) <plugin>
 permissions:
   plugman.admin:
     description: Allows use of all PlugMan commands.
@@ -37,6 +37,7 @@ permissions:
       plugman.unload: true
       plugman.check: true
       plugman.check.all: true
+      plugman.depends: true
   plugman.update:
     description: Allows the player to see the update alerts.
     default: op
@@ -90,4 +91,7 @@ permissions:
     default: op
   plugman.check.all:
     description: Allows use of the check all command.
+    default: op
+  plugman.depends:
+    description: Allows use of the depends command.
     default: op
