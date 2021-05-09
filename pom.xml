@@ -47,6 +47,10 @@
             <id>spigot-repo</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
         </repository>
+        <repository>
+            <id>gg-repo</id>
+            <url>https://artifactory.griefergames.dev/artifactory/gg-repo/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -133,5 +137,12 @@
             </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>gg-repo</id>
+            <url>https://artifactory.griefergames.dev/artifactory/gg-repo</url>
+        </repository>
+    </distributionManagement>
 
 </project>
