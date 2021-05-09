@@ -113,6 +113,7 @@ public class InfoCommand extends AbstractCommand {
         String version = target.getDescription().getVersion();
         String authors = Joiner.on(", ").join(target.getDescription().getAuthors());
         String status = target.isEnabled() ? ChatColor.GREEN + "Enabled" : ChatColor.RED + "Disabled";
+        String reload = (!PluginUtil.isIgnored(target)) ? ChatColor.GREEN + "Enabled" : ChatColor.RED + "Disabled";
         List<String> dependList = target.getDescription().getDepend();
         List<String> softdependList = target.getDescription().getSoftDepend();
 
@@ -120,6 +121,7 @@ public class InfoCommand extends AbstractCommand {
         sender.sendMessage(PlugMan.getInstance().getMessageFormatter().format(false, "info.version", version));
         sender.sendMessage(PlugMan.getInstance().getMessageFormatter().format(false, "info.authors", authors));
         sender.sendMessage(PlugMan.getInstance().getMessageFormatter().format(false, "info.status", status));
+        sender.sendMessage(PlugMan.getInstance().getMessageFormatter().format(false, "info.reload", reload));
         if (!dependList.isEmpty()) sender.sendMessage(PlugMan.getInstance().getMessageFormatter().format(false, "info.depends", Joiner.on(", ").join(dependList)));
         if (!softdependList.isEmpty()) sender.sendMessage(PlugMan.getInstance().getMessageFormatter().format(false, "info.softdepends", Joiner.on(", ").join(softdependList)));
 
