@@ -14,7 +14,6 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.Plugin;
-import org.graalvm.compiler.nodes.extended.PluginFactory_GuardedUnsafeLoadNode;
 
 /**
  * Command that checks if a plugin is up-to-date.
