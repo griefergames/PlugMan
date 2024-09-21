@@ -519,8 +519,10 @@ public class PluginUtil {
                 commandMap = (SimpleCommandMap) commandMapField.get(pluginManager);
 
                 Field knownCommandsField = SimpleCommandMap.class.getDeclaredField("knownCommands");
-                knownCommandsField.setAccessible(true);
-                commands = (Map<String, Command>) knownCommandsField.get(commandMap);
+                if(knownCommandsField != null) {
+                    knownCommandsField.setAccessible(true);
+                    commands = (Map<String, Command>) knownCommandsField.get(commandMap);
+                }
 
             } catch (NoSuchFieldException e) {
                 e.printStackTrace();
